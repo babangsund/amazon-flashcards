@@ -60,9 +60,11 @@ const theme = {
 
 const styles = css`
   html,
-  body {
+  body,
+  #root {
     margin: 0;
     padding: 0;
+    height: 100%;
     color: ${theme.textColor};
     font-family: ${theme.fontFamily};
     background-color: ${theme.backgroundColor};
