@@ -1,8 +1,6 @@
 import * as React from 'react';
 
-interface Props {}
-
-function App(props: Props) {
+function App() {
   return <div>App</div>;
 }
 
