@@ -22,6 +22,7 @@ const Right = styled(ChevronRight)`
 `;
 
 const Container = styled.section`
+  height: 100%;
   display: flex;
   margin: 0 auto;
   flex-direction: column;

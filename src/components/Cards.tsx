@@ -11,7 +11,7 @@ type CardsProps = {
 
 const StyledCards = styled.div`
   width: 100%;
-  height: 500px;
+  height: 100%;
   display: flex;
   position: relative;
   align-items: center;
