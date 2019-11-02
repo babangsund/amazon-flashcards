@@ -2,9 +2,24 @@
   "version": "0.1.0",
   "author": "babangsund",
   "name": "amazon-flashcards",
-  "eslintConfig": {
-    "extends": "react-app"
+  "homepage": "https://github.com/babangsund/amazon-flashcards#readme",
+  "description": "Flashcards for memorizing the 14 amazon leadership principles",
+  "bugs": {
+    "url": "https://github.com/babangsund/amazon-flashcards/issues"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/babangsund/amazon-flashcards.git"
+  },
+  "keywords": [
+    "react",
+    "amazon",
+    "emotion",
+    "prettier",
+    "typescript",
+    "create-react-app",
+    "leadership-principles"
+  ],
   "browserslist": {
     "production": [
       ">0.2%",
@@ -16,6 +31,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "eslintConfig": {
+    "extends": "react-app"
   },
   "scripts": {
     "start": "react-scripts start",
