@@ -5,21 +5,24 @@ type StyledCardProps = {
   pos: number;
 };
 
+type StyledInnerProps = {
+  flipped: boolean;
+};
+
 type CardProps = {
   pos: number;
   number: number;
   content: string;
 };
 
-const StyledInner = styled.div<{ flipped: boolean }>`
+const StyledInner = styled.div<StyledInnerProps>`
   width: 100%;
   height: 100%;
   position: relative;
   will-change: transform;
   transition: transform 0.8s;
   transform-style: preserve-3d;
-  transform: ${(p: { flipped: boolean }) =>
-    !p.flipped ? '' : 'rotateY(180deg)'};
+  transform: ${(p: StyledInnerProps) => (!p.flipped ? '' : 'rotateY(180deg)')};
   box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 3px -2px,
     rgba(0, 0, 0, 0.14) 0px 3px 4px 0px, rgba(0, 0, 0, 0.12) 0px 1px 8px 0px;
 `;
@@ -54,6 +57,7 @@ const StyledFront = styled.div`
   z-index: 1;
   display: flex;
   position: absolute;
+  font-size: 1.25rem;
   align-items: center;
   flex-direction: column;
   justify-content: center;
@@ -63,6 +67,7 @@ const StyledFront = styled.div`
 
 const StyledBack = styled(StyledFront)`
   transform: rotateY(180deg);
+  background-color: ${p => p.theme.amazonColors['neutral-light']};
 `;
 
 const Card: React.FC<CardProps> = ({ pos, number, content }) => {

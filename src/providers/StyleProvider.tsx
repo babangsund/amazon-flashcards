@@ -47,6 +47,7 @@ const amazonColors = {
   neutral: '#232F3E',
   secondary: '#00B9F2',
   'gray-dark': '#666666',
+  'neutral-light': '#37475A',
 };
 
 const theme = {
