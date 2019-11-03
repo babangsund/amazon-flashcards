@@ -4,6 +4,13 @@ Flashcards for memorizing the 14 amazon leadership principles.
 Press arrows to paginate, press a card to flip it.
 
 ---
+### Demo
+
+<p align="center">
+  <img src="./demo.gif" width="100%" title="Demo">
+</p>
+
+---
 ### Running it
 
 #### Clone the repository.
