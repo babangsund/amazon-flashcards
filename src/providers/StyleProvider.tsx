@@ -56,7 +56,8 @@ const theme = {
   textColor: amazonColors.white,
   backgroundColor: amazonColors.dark,
   fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
-  factor: (...args: number[]) => args.map(x => x * FACTOR + 'px').join(' '),
+  factor: (...args: number[]): string =>
+    args.map(x => x * FACTOR + 'px').join(' '),
 };
 
 const styles = css`
@@ -72,14 +73,14 @@ const styles = css`
   }
 `;
 
-function StyleProvider(props: Props) {
+const StyleProvider: React.FC<Props> = (props: Props) => {
   return (
     <ThemeProvider theme={theme}>
       <Global styles={styles} />
       {props.children}
     </ThemeProvider>
   );
-}
+};
 
 export const styled = s as CreateStyled<Theme>;
 export default StyleProvider;

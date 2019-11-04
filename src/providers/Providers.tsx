@@ -7,7 +7,7 @@ type Props = {
   children: React.ReactNode;
 };
 
-const Providers: React.FC<Props> = ({ children }) => (
+const Providers: React.FC<Props> = ({ children }: Props) => (
   <StyleProvider>{children}</StyleProvider>
 );
 

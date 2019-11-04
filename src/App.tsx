@@ -10,15 +10,15 @@ import { ReactComponent as ChevronRight } from './icons/chevron-right-solid.svg'
 const Left = styled(ChevronLeft)`
   z-index: 1;
   cursor: pointer;
-  height: ${p => p.theme.factor(3)};
-  padding: ${p => p.theme.factor(2)};
+  height: ${(p): string => p.theme.factor(3)};
+  padding: ${(p): string => p.theme.factor(2)};
 `;
 
 const Right = styled(ChevronRight)`
   z-index: 1;
   cursor: pointer;
-  height: ${p => p.theme.factor(3)};
-  padding: ${p => p.theme.factor(2)};
+  height: ${(p): string => p.theme.factor(3)};
+  padding: ${(p): string => p.theme.factor(2)};
 `;
 
 const Container = styled.section`
@@ -36,15 +36,15 @@ const Main = styled.main`
   align-items: center;
 `;
 
-function modIndex(i: number) {
+function modIndex(i: number): number {
   return (i + COUNT) % COUNT;
 }
 
-function App() {
+const App: React.FC<{}> = () => {
   const [index, setIndex] = React.useState(0);
 
   function handleIndex(n: number) {
-    return () => setIndex(i => modIndex(i + n));
+    return (): void => setIndex(i => modIndex(i + n));
   }
 
   return (
@@ -56,6 +56,6 @@ function App() {
       </Main>
     </Container>
   );
-}
+};
 
 export default App;

@@ -16,18 +16,18 @@ const StyledCards = styled.div`
   position: relative;
   align-items: center;
   justify-content: center;
-  padding: ${p => p.theme.factor(2)};
+  padding: ${(p): string => p.theme.factor(2)};
 `;
 
-const Cards: React.FC<CardsProps> = ({ items, selected }) => {
+const Cards: React.FC<CardsProps> = ({ items, selected }: CardsProps) => {
   const length = items.length;
   const half = Math.floor(length / 2) - 1;
 
-  function modIndex(i: number) {
+  function modIndex(i: number): number {
     return (i + length) % length;
   }
 
-  function getPos(index: number) {
+  function getPos(index: number): number {
     return modIndex(index - selected + length + half) - half;
   }
 

@@ -22,7 +22,8 @@ const StyledInner = styled.div<StyledInnerProps>`
   will-change: transform;
   transition: transform 0.8s;
   transform-style: preserve-3d;
-  transform: ${(p: StyledInnerProps) => (!p.flipped ? '' : 'rotateY(180deg)')};
+  transform: ${(p: StyledInnerProps): string =>
+    !p.flipped ? '' : 'rotateY(180deg)'};
   box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 3px -2px,
     rgba(0, 0, 0, 0.14) 0px 3px 4px 0px, rgba(0, 0, 0, 0.12) 0px 1px 8px 0px;
 `;
@@ -35,8 +36,8 @@ const StyledCard = styled.div<StyledCardProps>`
   box-sizing: border-box;
   will-change: transform;
   transition: transform 200ms;
-  padding: ${p => p.theme.factor(1)};
-  transform: translate3d(${(p: StyledCardProps) => p.pos * 100}%, 0, 0);
+  padding: ${(p): string => p.theme.factor(1)};
+  transform: translate3d(${(p: StyledCardProps): number => p.pos * 100}%, 0, 0);
   @media only screen and (max-width: 1440px) {
     width: 33vw;
     height: 33vw;
@@ -62,18 +63,18 @@ const StyledFront = styled.div`
   flex-direction: column;
   justify-content: center;
   backface-visibility: hidden;
-  background-color: ${p => p.theme.amazonColors.neutral};
+  background-color: ${(p): string => p.theme.amazonColors.neutral};
 `;
 
 const StyledBack = styled(StyledFront)`
   transform: rotateY(180deg);
-  background-color: ${p => p.theme.amazonColors['neutral-light']};
+  background-color: ${(p): string => p.theme.amazonColors['neutral-light']};
 `;
 
-const Card: React.FC<CardProps> = ({ pos, number, content }) => {
+const Card: React.FC<CardProps> = ({ pos, number, content }: CardProps) => {
   const [flipped, setFlipped] = React.useState(false);
 
-  function handleFlip() {
+  function handleFlip(): void {
     if (!flipped) {
       setFlipped(true);
       const timeout = setTimeout(() => {
